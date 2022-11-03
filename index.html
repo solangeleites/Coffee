@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrador</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="logo-img">
+            <img src="assets/img/logo.png" alt="logo" class="logo">
+        </div>
+        <div class="icono-carrito">
+            <i class="fa-solid fa-cart-shopping carrito-icon"></i>
+        </div>
+        <div class="bars-menu">
+            <i class="fa-solid fa-bars bars"></i>
+        </div>
+        <nav>
+            <ul class="navbar-list">
+                <li><a href="#">Op1</a></li>
+                <li><a href="#">Op2</a></li>
+                <li><a href="#">Op3</a></li>
+            </ul>
+
+            <div class="carrito">
+                <h2>Tus productos</h2>
+                    <div class="carrito-productos">
+                        <!-- aca se van a renderizar los prod. seleccionados -->
+                        <!-- <div class="cart-item">
+                            <img src="placeholder" alt="">
+                        <div class="text-cartProd">
+                            <h3>Nombre del producto</h3>
+                            <p>Precio del producto</p>
+                        </div>
+                        <div class="counter-cartProd">
+                            <span class="quantity-counter up" data-id="2">+</span>
+                            <span class="quantity">1</span> 
+                            <span class="quantity-counter down" data-id="2">-</span>
+                        </div>
+                        </div> -->
+                    </div>
+                        <span class="divider"></span>
+                            <div class="carrito-total">
+                                <h3>Total:</h3>
+                                <span class="total">$38.580,00</span>
+                            </div>
+                            <button class="btn-comprar">Comprar</button>
+                            <button class="btn-vaciar-carrito">Vaciar carrito</button>
+            </div>
+        </nav>
+    </header>
+<main>
+<!-- *-------------------------------------------------------------------------------- -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iste.</h1>
+            <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam non quam suscipit recusandae quis iste error molestiae eius eum perspiciatis?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellat modi cum adipisci ea unde! Quaerat esse facilis, non, reprehenderit obcaecati, omnis quo doloribus illo commodi beatae velit vel cupiditate?</p>
+        </div>
+
+        <div class="hero-card">
+            <!-- <img src="" alt=""> -->
+            <!-- aca estaria bueno que sea un slider -->
+            <p>Bueno aca iria una imagen</p>
+        </div>
+
+    </section>
+<!-- *-------------------------------------------------------------------------------- -->
+
+<section class="section-clasic">
+
+    <div class="selection">
+        <h3>For this winter we select the best coffee beans</h3>
+    </div>
+
+    <div class="container-filter">
+        <h4 class="filter-by">Filter by</h4>
+            <div class="filter">
+                <p class="category" data-category="colombia">Coffee beans <span>Colombia</span></p>
+                <p class="category" data-category="brasil">Coffee beans <span>Brasil</span></p>
+                <p class="category" data-category="italiano">Coffee beans <span>Italiano</span></p>
+            </div>
+    </div>
+
+    <div class="cards">
+        <!-- ?Aca se van a renderizar los productos -->
+    </div>    
+
+</section>
+<!-- *-------------------------------------------------------------------------------- -->
+
+<section class="section-clasic section-img">
+</section>
+<!-- *-------------------------------------------------------------------------------- -->
+<section class="section-blog">
+    <h3>We like to show our customers the different types of coffee machines, and that's why we created this mini blog</h3>
+    
+    <div class="cards cards-blog">
+        <div class="card card-blog">
+
+            <img src="placeholder" alt="" class="img-card">
+
+            <div class="card-text">
+                <h4>Lorem ipsum dolor sit amet consectetur </h4>
+                <span class="date">12/12/2012</span>
+            </div>
+
+            <div class="card-description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
+            </div>
+
+            <div class="card-btn">
+                <button class="btn-clasic btn-more">Read more</button>
+        </div>
+    
+    </div>
+
+
+    <div class="card card-blog">
+
+        <img src="placeholder" alt="" class="img-card">
+
+        <div class="card-text">
+            <h4>Lorem ipsum dolor sit amet consectetur </h4>
+            <span class="date">12/12/2012</span>
+        </div>
+
+        <div class="card-description">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
+        </div>
+
+        <div class="card-btn">
+            <button class="btn-add">Read more</button>
+    </div>
+
+</div>
+
+
+<div class="card card-blog">
+
+    <img src="placeholder" alt="" class="img-card">
+
+    <div class="card-text">
+        <h4>Lorem ipsum dolor sit amet consectetur </h4>
+        <span class="date">12/12/2012</span>
+    </div>
+
+    <div class="card-description">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
+    </div>
+
+    <div class="card-btn">
+        <button class="btn-add">Read more</button>
+</div>
+
+</div>
+</div>
+
+    <button class="btn-more btn-clasic" id="btn-more">See more</button>
+    <!--* ACA ABAJO VA A VER UN SCROLL -->
+    <!-- <div class="cards cards-blog">
+        <div class="card card-blog">
+
+            <img src="placeholder" alt="" class="img-card">
+
+            <div class="card-text">
+                <h4>Lorem ipsum dolor sit amet consectetur </h4>
+                <span class="date">12/12/2012</span>
+            </div>
+
+            <div class="card-description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
+            </div>
+
+            <div class="card-btn">
+                <button class="btn-add">Read more</button>
+        </div>
+    
+    </div>
+
+
+    <div class="card card-blog">
+
+        <img src="placeholder" alt="" class="img-card">
+
+        <div class="card-text">
+            <h4>Lorem ipsum dolor sit amet consectetur </h4>
+            <span class="date">12/12/2012</span>
+        </div>
+
+        <div class="card-description">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
+        </div>
+
+        <div class="card-btn">
+            <button class="btn-add">Read more</button>
+    </div>
+
+</div>
+
+
+<div class="card card-blog">
+
+    <img src="placeholder" alt="" class="img-card">
+
+    <div class="card-text">
+        <h4>Lorem ipsum dolor sit amet consectetur </h4>
+        <span class="date">12/12/2012</span>
+    </div>
+
+    <div class="card-description">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
+    </div>
+
+    <div class="card-btn">
+        <button class="btn-add">Read more</button>
+</div>
+
+</div>
+</div> -->
+</section>
+<!-- *-------------------------------------------------------------------------------- -->
+
+<section class="section-clasic section-img">
+</section>
+<!-- *-------------------------------------------------------------------------------- -->
+
+<section class="section-clasic section-ubication-contact">
+
+    <div class="circle-ubication"></div>
+    <img src="./assets/img/map.png" alt="" class="img-ubication">
+    <div class="ubication">
+
+        <div class="text-ubication">
+            <h3>Find us</h3>
+            <p>Bow Ln, London EC4M 9BW, Reino Unido</p>
+            <a href="https://earth.google.com/web/search/Am+Rupenhorn+4d,+14055+Berlin,+Alemania/@51.5127378,-0.0932503,23.31649018a,627.759553d,35y,0h,45t,0r/data=CjkaDwoJL20vMDYzN2RrGAIgASImCiQJzHfmwbZESkARazkIWbg8SkAZzoEmzfmgKkAh9868IfpoKkAoAg">View Google Earth</a>
+        </div>
+
+        <div class="text-ubication">
+            <h3>Get it touch</h3>
+            <p> Phone: +44 20 7248 9902</p>
+            <p> Email: hola@loguito.com</p>
+        </div>
+
+        <div class="text-ubication">
+            <h3>Opening hours</h3>
+            <p>Weekdays 8.00am — 7.00pm</p>
+            <p>Weekends 10.00am — 2.00am</p>
+            <p>Sunday: Closed</p>
+        </div>
+    </div>
+
+    <div class="reserve">
+        <form class="form" id="form">
+            <h3>For reserve</h3>
+
+            <div class="form_field">
+            <input type="text" id="name" placeholder="Your name" autocomplete="off">
+            <small class="small"></small>
+            </div>
+
+            <div class="form_field">
+                <input type="number" id="phone" placeholder="Your telephone" autocomplete="off">
+                <small class="small"></small>
+            </div>
+
+            <div class="form_field">
+                <input type="email" id="email" placeholder="Your email" autocomplete="off">
+                <small class="small"></small>
+            </div>
+
+            <textarea name="description" id="description" cols="60" rows="10" placeholder="Your message must contain date, time and place of preference if you wish"></textarea>
+            <button class="btn-send btn-clasic" id="send">Send</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+
+    <div class="img-footer">
+        <img src="./assets/img/logo.png" alt="logo" class="logo">
+    </div>
+
+    <div class="text-footer">
+        <p> Loguito 2022 ©. All rights reserved.</p>
+    </div>
+    
+</footer>
+</main>
+    <div class="add-modal"></div>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

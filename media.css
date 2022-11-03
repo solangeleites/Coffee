@@ -1,0 +1,258 @@
+/** Media para celular */
+@media (max-width: 576px){
+    header{
+        min-width: 300px;        
+    }
+    .navbar-list{
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 3%;
+        width: 93%;
+        min-height: 125px;
+    }
+    .bars-menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        order: 1;
+    }
+    .carrito-icon{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        font-size: 28px;
+        padding-left: 170px
+    }
+    .logo{
+        height: 80%;
+    }
+    .carrito{
+        display: none;
+        position: absolute;
+        top: 60px;
+        left:0%;
+        font-weight: 300;
+        font-size: 20px;
+        color: white;
+        background-color: red;
+    }
+
+    .linea-divisoria{
+        height: 2px;
+        width: 90%;
+        background-color: rgb(231, 223, 223);
+        border-radius: 10px;
+    }
+/* ------------------------------ */
+    .hero{
+        flex-direction: column;
+    }
+    .hero-text{
+        width: 95%;
+        height: 50%;
+    }
+    .hero-card{
+        width: 95%;
+        height: 50%;
+    }
+/* ------------------------------ */
+.section-clasic{
+    width: 95%;
+    height: 100%;
+}
+.selection{
+    height: 10%;
+    width: 95%;
+    font-size: 15px;
+    text-align: center;
+}
+.container-filter{
+    width: 95%;
+}
+.container-filter > h4{
+    width: 30%;
+}
+.filter{
+    top:786px;
+    left: 50%;
+    width: 172px;
+    background-color: #8a82de;
+    border-radius: 0px 0px 5px 5px;
+}
+.cards{
+    flex-direction: column;
+    justify-content: space-around;
+    width: 95%;
+    height: 800px;
+}
+.card{
+    flex-direction: column;
+    width: 90%;
+    height: 270px;
+}
+.img-card{
+    width: 50%;
+    height: auto;
+}
+.card-text{
+    flex-direction: row;
+}
+
+.card-description{
+    flex-direction: column;
+}
+.btn-add{
+    height: 30px;
+
+}
+.section-img{
+display: none;
+}
+/* ------------------  */
+.btn-more{
+    height: 30px;
+}
+/* ------------------ */
+.section-ubication-contact{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.circle-ubication{
+    width: 200px;
+    height: 200px;
+}
+.img-ubication{
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: 25px;
+    right: 60px;
+}
+.img-ubication:hover{
+    height: 250px;
+    width: 250px;
+    transition: none;
+}
+.ubication{
+    width: 95%;
+    height: 100%;
+}
+.text-ubication > h3{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+.reserve{
+    width: 95%;
+    height: 100%;
+}
+.form{
+    width: 100%;
+    height: 550px;
+}
+.form > textarea{
+    height: 100px;}
+}
+/*!------------------- PARA JS ---------------------------- */
+
+.open-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+}
+.open-carrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+}
+.open-filter{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    }
+.hidden{
+    visibility: hidden;
+}
+.form_field.success input{
+    border: 2px solid #28a745
+}
+.form_field.error input {
+    border: 2px solid #dc3545
+}
+.small{
+    font-size: 12px;
+    font-weight: 600;
+    color: #dc3545;
+    padding: 4px 0px;
+}
+.add-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(86, 195, 86);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.5s ease-in;
+    transform: translateY(200%);
+    padding: 15px 0px;
+}
+.active-modal{
+    transform: translateY(0);
+    transition: all 0.5s ease-out;
+}
+
+/*!------------------- PARA JS ---------------------------- */
+/** Media para tablet */
+@media (max-width: 992px){
+
+.carrito{
+    width: 50%;
+    left: 50%;
+}
+.filter{
+    left: 68.5%;
+}
+.img-card{
+    width: 205px;
+    height: auto;
+}
+.section-ubication-contact{
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+    }
+.circle-ubication{
+display: none;
+}
+.img-ubication{
+display: none;
+}
+.ubication{
+    height: 90%;
+    width: 50%;
+    gap: 80px;
+}
+.reserve{
+    width: 50%;
+}
+
+.form > input >textarea{
+    width: 250px;
+}
+.form > textarea{
+    height: 90px;
+}
+}
