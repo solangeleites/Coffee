@@ -21,13 +21,26 @@ const $form = d.querySelector('#form')
 const $name = d.querySelector('#name')
 const $email = d.querySelector('#email')
 const $telephone = d.querySelector ('#phone')
-// Botón para vaciar el cashito:
+// Botón para vaciar y botón para comprar:
 const $EmptyCart = d.querySelector('.btn-vaciar-carrito')
-// Modal para mostrar que se agrego un prod. al carrito
+const $buyBtn = d.querySelector('.btn-comprar')
+// Modal para mostrar que se agrego un prod. al carrito:
 const $modal = d.querySelector('.add-modal')
-console.log($modal)
+// Contenedor de carrito y total:
+const $containerCart = d.querySelector('.carrito-productos')
+const $totalCart = d.querySelector('.carrito-total')
+const $total = d.querySelector('.total')
 
 
+
+
+// ?Seteamos el carrito , vacío o lo que este en el localStorage según corresponda, igual que en los proyectos anteriores
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+//?Función para guardar el carrito en el localStorage
+const saveLocalStorage = (cartList) => {
+  localStorage.setItem("cart", JSON.stringify(cartList));
+};
 
 
 
@@ -140,9 +153,9 @@ const renderProduct = products => {
             <div class="card-btn">
                 <button class="btn-add" 
                 data-id= '${id}'
-                data-id= '${name}'
-                data-id= '${price}'
-                data-id= '${img}'>Add to cart</button>
+                data-name= '${name}'
+                data-price= '${price}'
+                data-img= '${img}'>Add to cart</button>
             </div> 
             </div>`
 }
@@ -184,8 +197,14 @@ const openCarrito = () => {
 const openFilter = () => {
     $filterToShow.classList.toggle('open-filter')
 }
-//? Funciones para agregar productos al querido carrito
+
+
+
+
+
+//? Empiezo a crear funciones para agregar productos al querido carrito
 const renderCartProduct = (cartProduct) => {
+    const {id, name, img, price, quantity} = cartProduct
     return`
             <div class="cart-item">
                 <img src="${img}" alt="${name}">
@@ -200,8 +219,65 @@ const renderCartProduct = (cartProduct) => {
             </div>
             </div>`
 }
+const renderCart = () => {
+    if(!cart.length){
+        $containerCart.innerHTML = `<p class="empty-msg">No hay productos en el carrito.</p>`
+        return;
+    }
+    $containerCart.innerHTML = cart.map(renderCartProduct).join('')
+}
+const getCartTotal = () => {
+    return cart.reduce((acc,cur) => acc + Number(cur.price) * cur.quantity, 0)
+}
+const showTotal = () =>{
+    $total.innerHTML = `${getCartTotal().toFixed(2)} EUR`
+}
+const disableBtn = (btn) => {
+    if(!cart.length){
+        btn.classList.add('disabled')
+    } else {
+        btn.classList.remove('disabled')
+    }
+}
+const addProduct = (e) => {
+    if(!e.target.classList.contains("btn-add")) return;
+    let {id, name, price, img} = e.target.dataset;
+    const product = createProducts(id, name, price, img)
 
+    if(isExistingCartProd(product)){
+        addUnitProd(product)
+        modalAddProd("Se  agregó una unidad al carrito")
+    } else {
+        createCartProd(product)
+        modalAddProd("El producto se ha agregado al carrito")
+    }
+}
+const createProducts = (id, name, price, img)=>{
+    return{id,name, price,img}
+}
+const isExistingCartProd = (product) => {
+return cart.find(item => item.id === product.id)
+}
+const addUnitProd = (product) => {
+    cart = cart.map((cartProduct) => {
+        cartProduct.id === product.id 
+        ? {... cartProduct, quantity: cartProduct.quantity + 1}
+        :cartProduct
+    })
+}
+const createCartProd = (product) => {
+    cart = [ ...cart, {...product, quantity: 1}]
+}
 
+//? Función para el modal
+const modalAddProd = (message) => {
+    $modal.classList.add('show-modal');
+    $modal.textContent = message
+    setTimeout(() => {
+        $modal.classList.remove('show-modal')
+    },2000)
+}
+// !Esto es lo ultimo que hice, falta que se agreguen losm  prod al carrito, que cabmien los bototnes de borrar y comprar, que se sume o que se reste con el + y - que se sume la cantidad al precio y que una que llegue al ultimo prod del - que renderice un mensaje de si quiere que borre el prod de carrito o no.
 
 
 
@@ -236,5 +312,10 @@ const init = () => {
                         break
         }
     }))
+    document.addEventListener('DOMContentLoaded', renderCart)
+    document.addEventListener('DOMContentLoaded', showTotal)
+    disableBtn($EmptyCart)
+    disableBtn($buyBtn)
+    $containerFilteredCards.addEventListener('click', addProduct)
 }
 init()

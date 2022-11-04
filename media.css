@@ -209,11 +209,20 @@ display: none;
     transform: translateY(200%);
     padding: 15px 0px;
 }
-.active-modal{
+.show-modal{
     transform: translateY(0);
     transition: all 0.5s ease-out;
 }
-
+.empty-msg{
+    font-size: 18px;
+    text-align: center;  
+}
+.disabled{
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
+    border: none;
+}
 /*!------------------- PARA JS ---------------------------- */
 /** Media para tablet */
 @media (max-width: 992px){
