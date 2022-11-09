@@ -38,8 +38,8 @@ const $total = d.querySelector('.total')
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 //?Función para guardar el carrito en el localStorage
-const saveLocalStorage = (cartList) => {
-  localStorage.setItem("cart", JSON.stringify(cartList));
+const saveLocalStorage = (cartProduct) => {
+  localStorage.setItem("cart", JSON.stringify(cartProduct));
 };
 
 
@@ -207,15 +207,15 @@ const renderCartProduct = (cartProduct) => {
     const {id, name, img, price, quantity} = cartProduct
     return`
             <div class="cart-item">
-                <img src="${img}" alt="${name}">
+                <img src="${img}" alt="${name}" class="img-cart-item">
             <div class="text-cartProd">
                 <h3>${name}</h3>
-                <p>${price}</p>
+                <p>${price}EUR</p>
             </div>
             <div class="counter-cartProd">
                 <span class="quantity-counter up" data-id="${id}">+</span>
                 <span class="quantity">${quantity}</span> 
-                <span class="quantity-counter down" data-id="${id}">-</span>
+                <span class="quantity-counter down" data-id="${id}"> - </span>
             </div>
             </div>`
 }
@@ -226,9 +226,7 @@ const renderCart = () => {
     }
     $containerCart.innerHTML = cart.map(renderCartProduct).join('')
 }
-const getCartTotal = () => {
-    return cart.reduce((acc,cur) => acc + Number(cur.price) * cur.quantity, 0)
-}
+const getCartTotal = () => cart.reduce((acc, cur) => acc + Number(cur.price) * cur.quantity, 0)
 const showTotal = () =>{
     $total.innerHTML = `${getCartTotal().toFixed(2)} EUR`
 }
@@ -239,19 +237,7 @@ const disableBtn = (btn) => {
         btn.classList.remove('disabled')
     }
 }
-const addProduct = (e) => {
-    if(!e.target.classList.contains("btn-add")) return;
-    let {id, name, price, img} = e.target.dataset;
-    const product = createProducts(id, name, price, img)
 
-    if(isExistingCartProd(product)){
-        addUnitProd(product)
-        modalAddProd("Se  agregó una unidad al carrito")
-    } else {
-        createCartProd(product)
-        modalAddProd("El producto se ha agregado al carrito")
-    }
-}
 const createProducts = (id, name, price, img)=>{
     return{id,name, price,img}
 }
@@ -259,15 +245,91 @@ const isExistingCartProd = (product) => {
 return cart.find(item => item.id === product.id)
 }
 const addUnitProd = (product) => {
-    cart = cart.map((cartProduct) => {
+    cart = cart.map((cartProduct) =>
         cartProduct.id === product.id 
         ? {... cartProduct, quantity: cartProduct.quantity + 1}
         :cartProduct
-    })
-}
+    )}
+
 const createCartProd = (product) => {
     cart = [ ...cart, {...product, quantity: 1}]
 }
+const checkStateCart = () => {
+    saveLocalStorage(cart)
+    renderCart(cart)
+    showTotal(cart)
+    disableBtn($buyBtn)
+    disableBtn($EmptyCart)
+}
+const addProduct = (e) => {
+    if(!e.target.classList.contains("btn-add")) return;
+    let {id, name, price, img} = e.target.dataset;
+    const product = createProducts(id, name, price, img)
+
+    if(isExistingCartProd(product)){
+        addUnitProd(product)
+        modalAddProd("Se  agregó una unidad más al carrito")
+    } else {
+        createCartProd(product)
+        modalAddProd("El producto se agregó al carrito")
+    }
+    checkStateCart()
+}
+
+// ? Funciónes para sumar y restar desde el carrito
+const addBtn = (id) => {
+    let existingCartProd = cart.find((item) => item.id === id)
+    addUnitProd(existingCartProd)
+}
+const handleQuantity = (e) =>{
+    if(e.target.classList.contains('down')){
+        downBtn(e.target.dataset.id)
+    } else if (e.target.classList.contains('up')){
+        addBtn(e.target.dataset.id)
+    }
+    checkStateCart()
+}
+const downBtn = (id) => {
+    let existingCartProd = cart.find((item) => item.id === id)
+    if(existingCartProd.quantity === 1){
+        if(window.confirm('¿Desea eliminar el producto del carrito?')){
+            removeProdCart(existingCartProd)
+        }return;
+    }
+    lessBtn(existingCartProd)
+}
+const removeProdCart = (existingCartProd) => {
+    cart = cart.filter(product => product.id !== existingCartProd.id)
+    checkStateCart()
+}
+const lessBtn = (existingCartProd) => {
+    cart  = cart.map(product => {
+        return product.id === existingCartProd.id ? { ...product, quantity: Number(product.quantity) - 1}
+        : product
+    })
+}
+// ? Funciones para los botones de  comprar y borrar carrito
+const resetCart = () => {
+    cart = []
+    checkStateCart()
+}
+const completeCartAction = (confirmMsg, successMsg) => {
+    if (!cart.length) return;
+    if(window.confirm(confirmMsg)){
+        resetCart()
+        alert(successMsg)
+    }
+}
+const completeBuy = () => {
+    completeCartAction('Desea completar su compra?', 'Gracias por tu compra, vuelve pronto!')
+}
+const btnEmptyCart = () => {
+    completeCartAction('Desea vaciar el carrito?', 'No hay productos en el carrito')
+}
+
+
+
+
 
 //? Función para el modal
 const modalAddProd = (message) => {
@@ -277,7 +339,7 @@ const modalAddProd = (message) => {
         $modal.classList.remove('show-modal')
     },2000)
 }
-// !Esto es lo ultimo que hice, falta que se agreguen losm  prod al carrito, que cabmien los bototnes de borrar y comprar, que se sume o que se reste con el + y - que se sume la cantidad al precio y que una que llegue al ultimo prod del - que renderice un mensaje de si quiere que borre el prod de carrito o no.
+
 
 
 
@@ -317,5 +379,9 @@ const init = () => {
     disableBtn($EmptyCart)
     disableBtn($buyBtn)
     $containerFilteredCards.addEventListener('click', addProduct)
+    $containerCart.addEventListener('click', handleQuantity)
+    $buyBtn.addEventListener('click', completeBuy)
+    $EmptyCart.addEventListener('click', btnEmptyCart)
+
 }
 init()

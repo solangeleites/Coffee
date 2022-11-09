@@ -223,6 +223,42 @@ display: none;
     cursor: not-allowed;
     border: none;
 }
+/* ?Estilo para adentro del carrito*/
+
+.cart-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img-cart-item{
+    display: flex;
+    width: 100px;
+    height: 100px;
+}
+.text-cartProd{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    font-size: 16px;
+}
+.counter-cartProd{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.up, .down{
+    font-size: 28px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 0px 10px;
+}
+
 /*!------------------- PARA JS ---------------------------- */
 /** Media para tablet */
 @media (max-width: 992px){

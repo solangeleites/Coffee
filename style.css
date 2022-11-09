@@ -80,6 +80,12 @@ header{
     margin-top: 25px;
     cursor: pointer;
 }
+.btn-comprar{
+    background-color: #cb670a;
+}
+.btn-vaciar-carrito{
+    background-color: #cb670a6b;
+}
 /* *------------------------------------------------------------------------ */
 main{
     display: flex;
