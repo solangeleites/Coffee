@@ -70,8 +70,7 @@ const products = [
         category: "italiano",
         img: "/assets/img/beans.jpg",
         description: "This coffee stands out for its smoothness, body and notes of nuts."
-    }
-    
+    },
 ]
 
 //? Función para dividir el array.

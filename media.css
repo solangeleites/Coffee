@@ -113,6 +113,7 @@ display: none;
 /* ------------------  */
 .btn-more{
     height: 30px;
+    margin-top: 30px;
 }
 /* ------------------ */
 .section-ubication-contact{
@@ -258,6 +259,26 @@ display: none;
     border-radius: 3px;
     padding: 0px 10px;
 }
+.hidden{
+    visibility: hidden;
+}
+#container-all-cards{
+    flex-wrap: wrap;
+    border: 1px solid salmon;
+    height: 90vh;
+}
+
+#container-sing-card{
+    border: 1px solid red;
+    display: none;
+    flex-wrap: wrap;
+}
+#container-sing-card:nth-child(1), #container-sing-card:nth-child(2),
+#container-sing-card:nth-child(3){
+    display:flex;
+    transition: 0.2s ease all;
+}
+
 
 /*!------------------- PARA JS ---------------------------- */
 /** Media para tablet */

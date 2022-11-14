@@ -14,8 +14,6 @@ const $containerFilters = d.querySelector('.filter')
 const $filters = d.querySelectorAll('.category')
 // Botón de ver más:
 const $btnSeeMore = d.querySelector('#btn-more')
-// Contenedor de la section blog:
-const $containerCardsBlog = d.querySelector('.cards-blog')
 // Elementos para la validación del formulario:
 const $form = d.querySelector('#form')
 const $name = d.querySelector('#name')
@@ -31,25 +29,11 @@ const $containerCart = d.querySelector('.carrito-productos')
 const $totalCart = d.querySelector('.carrito-total')
 const $total = d.querySelector('.total')
 
-
-
-
-// ?Seteamos el carrito , vacío o lo que este en el localStorage según corresponda, igual que en los proyectos anteriores
+// ?Funciones para guardar el carrito el ls
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-//?Función para guardar el carrito en el localStorage
 const saveLocalStorage = (cartProduct) => {
   localStorage.setItem("cart", JSON.stringify(cartProduct));
-};
-
-
-
-
-
-
-
-
-
+}
 //? Funciones para la validacion del form
 const validForm = e => {
     e.preventDefault();
@@ -64,7 +48,7 @@ const validForm = e => {
     }
 }
 const isEmpty = value => (value === '' ? false : true);
-const checkLength = (length, min, max) => 
+const checkLength = (length, min, max) =>
 length < min || length > max ? false : true;
 const checkUsername = () => {
     let valid = false;
@@ -107,7 +91,7 @@ let valid = false
 const phone = $telephone.value.trim()
 if (!isEmpty(phone)) {
     showError($telephone, `The phone is required.`)
-} else if (!isValidPhone(phone)){   
+} else if (!isValidPhone(phone)){
     showError($telephone, `The phone is not valid.`)
 } else {
     showSuccess($telephone)
@@ -151,12 +135,12 @@ const renderProduct = products => {
                 <p>${description}</p>
             </div>
             <div class="card-btn">
-                <button class="btn-add" 
+                <button class="btn-add"
                 data-id= '${id}'
                 data-name= '${name}'
                 data-price= '${price}'
                 data-img= '${img}'>Add to cart</button>
-            </div> 
+            </div>
             </div>`
 }
 const renderProducts = (index = 0, category = undefined) => {
@@ -197,11 +181,6 @@ const openCarrito = () => {
 const openFilter = () => {
     $filterToShow.classList.toggle('open-filter')
 }
-
-
-
-
-
 //? Empiezo a crear funciones para agregar productos al querido carrito
 const renderCartProduct = (cartProduct) => {
     const {id, name, img, price, quantity} = cartProduct
@@ -214,7 +193,7 @@ const renderCartProduct = (cartProduct) => {
             </div>
             <div class="counter-cartProd">
                 <span class="quantity-counter up" data-id="${id}">+</span>
-                <span class="quantity">${quantity}</span> 
+                <span class="quantity">${quantity}</span>
                 <span class="quantity-counter down" data-id="${id}"> - </span>
             </div>
             </div>`
@@ -237,7 +216,6 @@ const disableBtn = (btn) => {
         btn.classList.remove('disabled')
     }
 }
-
 const createProducts = (id, name, price, img)=>{
     return{id,name, price,img}
 }
@@ -246,11 +224,10 @@ return cart.find(item => item.id === product.id)
 }
 const addUnitProd = (product) => {
     cart = cart.map((cartProduct) =>
-        cartProduct.id === product.id 
+        cartProduct.id === product.id
         ? {... cartProduct, quantity: cartProduct.quantity + 1}
         :cartProduct
     )}
-
 const createCartProd = (product) => {
     cart = [ ...cart, {...product, quantity: 1}]
 }
@@ -275,7 +252,6 @@ const addProduct = (e) => {
     }
     checkStateCart()
 }
-
 // ? Funciónes para sumar y restar desde el carrito
 const addBtn = (id) => {
     let existingCartProd = cart.find((item) => item.id === id)
@@ -326,11 +302,6 @@ const completeBuy = () => {
 const btnEmptyCart = () => {
     completeCartAction('Desea vaciar el carrito?', 'No hay productos en el carrito')
 }
-
-
-
-
-
 //? Función para el modal
 const modalAddProd = (message) => {
     $modal.classList.add('show-modal');
@@ -339,28 +310,29 @@ const modalAddProd = (message) => {
         $modal.classList.remove('show-modal')
     },2000)
 }
+//? Función para el boton de ver mas
+let currentItem = 3;
+const showMoreCards = () => {
+ let boxes = [...document.querySelectorAll('#container-all-cards #container-sing-card')]
+
+ for(let i = currentItem; i < currentItem + 3; i++){
+    boxes[i].style.display = "flex"
+ }
+ currentItem +=3;
+ if(currentItem >= boxes.length){
+    $btnSeeMore.style.display = 'none'
+ }
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//* Función inicializadora.
+//todo: Función inicializadora.
 const init = () => {
     $barsMenu.addEventListener('click', openMenu)
     $carritoBtn.addEventListener('click', openCarrito)
     $filterBy.addEventListener('click', openFilter)
     renderProducts()
     $containerFilters.addEventListener('click', applyFilter)
-    $form.addEventListener('submit', validForm)   
+    $form.addEventListener('submit', validForm)
     $form.addEventListener('input', debounce (e => {
         switch(e.target.id){
             case 'name':
@@ -382,6 +354,6 @@ const init = () => {
     $containerCart.addEventListener('click', handleQuantity)
     $buyBtn.addEventListener('click', completeBuy)
     $EmptyCart.addEventListener('click', btnEmptyCart)
-
+    $btnSeeMore.addEventListener('click', showMoreCards)
 }
 init()
