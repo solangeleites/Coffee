@@ -10,9 +10,13 @@
     --font-medium: font-size: 16px;
     --font-big: font-size: 20px;
     --orange-pastel: #FFAB4F;
+    --red: rgb(198, 47, 47);
+    --green: rgb(47, 198, 47);
 }
 html{
     scroll-behavior: smooth;
+    scroll-padding-bottom: 5px;
+    scroll-padding-top: 50px;
 }
 header{
     display: flex;
@@ -38,7 +42,7 @@ header{
 li,a{
     color: var(--beige);
     font-size: var(--font-small);
-    font-weight: 500;
+    font-weight: 700;
 }
 li,a:hover{
     color:var(--brown);
@@ -52,6 +56,7 @@ li,a:hover{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-size: 20px;
 }
 .icono-carrito:hover{
     color: var(--brown);
@@ -59,39 +64,47 @@ li,a:hover{
 }
 .carrito{
     order: 2;
-    height: 100%;
-    border: 2px solid orange;
+    min-height: 100vh;
     font-size: 30px;
     justify-content: center;
     align-items: center;
     display: none;
     position: absolute;
-    top: 58px;
+    top: 50px;
     left: 80%;
     width: 20%;
-    min-height: 400px;
+    background-color: var(--white);
+}
+.carrito > h2{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--beige);
+    text-align: center;
+}
+.empty-msg{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 20px;
 }
 .divider{
-    height: 3px;
-    width: 100%;
-    background-color: black;
-    border-radius: 10px;
-    margin-top: 10px;
+    width: 90%;
+    height: 2.5px;
+    background-color: var(--beige);
+    margin-top: 50px;
 }
 .carrito-total{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
     width: 100%;
+    font-size: 20px;
 }
 .btn-comprar, .btn-vaciar-carrito{
-    height: 60px;
-    width: 120px;
+    height: 40px;
+    width: 70%;
     border:none;
-    border-radius: 10px;
-    margin-top: 25px;
+    border-radius: 5px;
     cursor: pointer;
 }
 .btn-comprar{
@@ -99,6 +112,7 @@ li,a:hover{
 }
 .btn-vaciar-carrito{
     background-color: #cb670a6b;
+    margin-bottom: 30px;
 }
 /* *------------------------------------------------------------------------ */
 main{
@@ -124,9 +138,9 @@ main{
     text-align: center;
     height: 30%;
     width: 70%;
-    color: var(--beige-light);
+    color: var(--white);
     line-height: 40px;
-    font-size: var(--font-medium);
+    font-size: 20px
 }
 
 /* *------------------------------------------------------------------------ */
@@ -138,7 +152,6 @@ main{
     align-items: center;
     width: 90vw;
     height: 93vh;
-    border: 2px #d722a4 solid;    
 }
 .selection{
     display: flex;
@@ -149,6 +162,9 @@ main{
     color: var(--beige);
     font-size: var(--font-small);
 }
+.selection > h3{
+    margin-top: 30px;
+}
 .container-filter{
     display: flex;
     flex-direction: column;
@@ -156,6 +172,7 @@ main{
     align-items: flex-end ;
     width: 90%;
     color: var(--beige);
+    position: relative;
 
 }
 .container-filter > h4{
@@ -164,8 +181,9 @@ main{
     width: 13.7%;
     text-align: center;
     cursor: pointer;
+    margin-bottom: 5px;
 }
-.container-filter > h4:hover{
+.containepxr-filter > h4:hover{
     color: var(--brown);
     transition: all 0.3s ease-in-out;
 }
@@ -177,7 +195,7 @@ main{
     width: 250px;
     height: 100px;
     position: absolute;
-    top: 760px;
+    top: 777.5px;
     left: 77%;
     background: var(--white);
     z-index: 1;
@@ -211,7 +229,8 @@ main{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 800px;
+    height: 900px;
+    margin-bottom: 30px;
 }
 .card{
     display: flex;
@@ -267,7 +286,8 @@ main{
     align-items: center;
     width: 90vw;
     height: 100%;
-    border: 2px #d722a4 solid;
+    gap: 10px;
+    margin: 20px 0px;
 }
 /* ----------------------------------- */
 
@@ -286,20 +306,17 @@ main{
     height: 300px;
     width: 300px;
     border-radius: 50%;
-    background-color: #8622d7a8;
+    background-color: var(--beige);
     margin: 50px;
 }
+
 .img-ubication{
     height: 350px;
     width: 350px;
     position: absolute;
-    right: 70.5%;
 }
 .img-ubication:hover{
     cursor: pointer;
-    height: 370px;
-    width: 370px;
-    transition: all 0.5s ease-out;
 }
 
 .ubication{
@@ -307,8 +324,9 @@ main{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 60%;
+    height: 500px;
     width: 18%;
+    text-align: center;
 }
 .text-ubication > h3{
     text-align: center;
@@ -317,9 +335,9 @@ main{
     margin-bottom: 10px;
 }
 .text-ubication > p{
-    width: 200px;
-    text-align: justify;
-    font-size: 16px;
+    width: 300px;
+    text-align: center;
+    font-size: 14px;
     font-weight: 500;
     margin-bottom: 8px;
 }
@@ -347,21 +365,26 @@ main{
 .form_field > input{
     width: 300px;
     height: 30px;
-    border-radius: 3px;
     border: none;
     padding-left: 5px;
     border: none;
     outline: none;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--brown);
+    border-left: 1px solid var(--brown);
 }
 .form > textarea{
     width: 300px;
     height: 150px;
-    border-radius: 3px;
     border: none;
     padding: 5px;
     border: none;
     outline: none;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--brown);
+    border-left: 1px solid var(--brown);
 }
+
 footer{
     display: flex;
     flex-direction: row;
@@ -370,6 +393,7 @@ footer{
     width: 90vw;
     height: 70px;
     padding: 0px 10px 0px 10px;
+    text-align: center;
 }
 .img-footer > img{
     height: 18px;
@@ -380,4 +404,13 @@ footer{
 }
 .bars-menu{
     display: none;
+}
+.form_field > small{
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    display: flex;
+    width: 300px;
+    height: 40px;
+    color: var(--red);
 }

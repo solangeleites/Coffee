@@ -6,24 +6,26 @@
     .navbar-list{
         display: none;
         position: absolute;
-        top: 60px;
-        left: 3%;
-        width: 93%;
+        top: 45px;
+        left: 0%;
+        width: 100%;
         min-height: 125px;
+        background-color: var(--white);
     }
     .bars-menu{
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 30px;
+        font-size: 22.5px;
         order: 1;
+        cursor: pointer;
     }
     .carrito-icon{
         display: flex;
         justify-content:center;
         align-items: center;
-        font-size: 28px;
-        padding-left: 170px
+        font-size: 22.5px;
+        margin-left: 170px;
     }
     .logo{
         height: 80%;
@@ -31,31 +33,40 @@
     .carrito{
         display: none;
         position: absolute;
-        top: 60px;
-        left:0%;
-        font-weight: 300;
-        font-size: 20px;
-        color: white;
-        background-color: red;
+        top: 50px;
+        left: 0%;
+        color: var(--beige);
+        padding-left: 5px;
+        padding-bottom: 20px;
     }
-
+    .carrito > h2{
+        font-size: 18px;
+    }
+    .empty-msg{
+        font-size: 14px;
+    }
     .linea-divisoria{
         height: 2px;
         width: 90%;
         background-color: rgb(231, 223, 223);
         border-radius: 10px;
     }
+    .carrito-total{
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
 /* ------------------------------ */
     .hero{
         flex-direction: column;
+        height: 100vh;
     }
     .hero-text{
         width: 95%;
-        height: 50%;
-    }
-    .hero-card{
-        width: 95%;
-        height: 50%;
+        height: 95%;
+        font-size: 16px;
+        text-align: center;
+        text-shadow: black 0.1em 0.1em 0.2em;
     }
 /* ------------------------------ */
 .section-clasic{
@@ -70,34 +81,41 @@
 }
 .container-filter{
     width: 95%;
+    position: relative;
+    margin: 15px 0px;
+    right: 17px;
 }
 .container-filter > h4{
     width: 30%;
 }
 .filter{
-    top:786px;
-    left: 50%;
-    width: 172px;
-    background-color: #8a82de;
+    position: absolute;
+    z-index: 2;
+    top: 25px;
+    width: 250px;
+    height: 125px;
     border-radius: 0px 0px 5px 5px;
 }
 .cards{
     flex-direction: column;
     justify-content: space-around;
     width: 95%;
-    height: 800px;
+    height: 100%;
+    gap: 15px;
 }
 .card{
     flex-direction: column;
     width: 90%;
-    height: 270px;
+    height: 500px;
 }
 .img-card{
-    width: 50%;
+    width: 10%;
     height: auto;
 }
 .card-text{
     flex-direction: row;
+    font-size: 15px;
+    text-align: center;
 }
 
 .card-description{
@@ -109,6 +127,10 @@
 }
 .section-img{
 display: none;
+}
+#blog > h3{
+    text-align: center;
+    margin-bottom: 15px;
 }
 /* ------------------  */
 .btn-more{
@@ -264,12 +286,12 @@ display: none;
 }
 #container-all-cards{
     flex-wrap: wrap;
-    border: 1px solid salmon;
-    height: 90vh;
+    height: 100%;
+    gap: 30px;
 }
 
 #container-sing-card{
-    border: 1px solid red;
+    border: 2px solid var(--beige);
     display: none;
     flex-wrap: wrap;
 }
@@ -288,8 +310,15 @@ display: none;
     width: 50%;
     left: 50%;
 }
+.container-filter{
+    width: 100%;
+    position: relative;
+}
 .filter{
-    left: 68.5%;
+    top: 100%;
+    left: 63.5%;
+    width: 250px;
+    height: 125px;
 }
 .img-card{
     width: 205px;
@@ -320,5 +349,14 @@ display: none;
 }
 .form > textarea{
     height: 90px;
+}
+
+.cards{
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 100%;
+}
+#coffees{
+    height: 100%;
 }
 }
