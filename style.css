@@ -195,8 +195,8 @@ main{
     width: 250px;
     height: 100px;
     position: absolute;
-    top: 777.5px;
-    left: 77%;
+    top: 27px;
+    left: 83%;
     background: var(--white);
     z-index: 1;
     border: 1px dashed var(--beige);
