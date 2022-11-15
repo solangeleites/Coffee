@@ -90,8 +90,9 @@
 }
 .filter{
     position: absolute;
-    z-index: 2;
-    top: 25px;
+    z-index: 1;
+    top: 100px;
+    left: 15px;
     width: 250px;
     height: 125px;
     border-radius: 0px 0px 5px 5px;
