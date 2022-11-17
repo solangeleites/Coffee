@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integrador</title>
+    <link rel="icon" href="./assets/img/logo.png">
+    <title>C'offee</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
     <header>
         <div class="logo-img">
-            <img src="assets/img/logo.png" alt="logo" class="logo">
+            <a href="integrador-javascript-five.vercel.app/"><img src="assets/img/logo.png" alt="logo" class="logo"></a>
         </div>
         <div class="icono-carrito">
             <i class="fa-solid fa-cart-shopping carrito-icon"></i>
@@ -20,15 +22,15 @@
         <div class="bars-menu">
             <i class="fa-solid fa-bars bars"></i>
         </div>
-        <nav>
-            <ul class="navbar-list">
+        <nav class="navbar">
+            <ul class="navbar-list" id="navbar-list">
                 <li><a href="#coffees">Coffees</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#location">Location</a></li>
             </ul>
 
             <div class="carrito">
-                <h2>Tus productos</h2>
+                <h2>Your products</h2>
                     <div class="carrito-productos">
                         <!-- aca se van a renderizar los prod. seleccionados -->
                         <!-- <div class="cart-item">
@@ -49,8 +51,8 @@
                                 <h3>Total:</h3>
                                 <span class="total">0.00 EUR</span>
                             </div>
-                            <button class="btn-comprar">Comprar</button>
-                            <button class="btn-vaciar-carrito">Vaciar carrito</button>
+                            <button class="btn-comprar">Buy</button>
+                            <button class="btn-vaciar-carrito">Empty cart</button>
             </div>
         </nav>
     </header>
@@ -60,9 +62,9 @@
     <section class="hero">
 
         <div class="hero-text">
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iste.</h1>
-            <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam non quam suscipit recusandae quis iste error molestiae eius eum perspiciatis?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellat modi cum adipisci ea unde! Quaerat esse facilis, non, reprehenderit obcaecati?</p>
+            <h1>We invite you the first coffee in the morning</h1>
+            <h3>Because we like to enjoy the process of preparing the first coffee in the morning, its aroma is our perfume</h3>
+            <p>"The smell of coffee and newspapers. Sunday and its boredo[...]." - Jorge Luis Borges </p>
         </div>
 
     </section>
@@ -77,9 +79,9 @@
     <div class="container-filter">
         <h4 class="filter-by">Filter by</h4>
             <div class="filter">
-                <p class="category" data-category="colombia">Coffee beans <span  id="colombia">Colombia</span></p>
-                <p class="category" data-category="brasil">Coffee beans <span id="brasil">Brasil</span></p>
-                <p class="category" data-category="italiano">Coffee beans <span id="italiano">Italiano</span></p>
+                <p class="category" data-category="colombia" id="colombia">Coffee beans Colombia</p>
+                <p class="category" data-category="brasil" id="brasil">Coffee beans Brasil</p>
+                <p class="category" data-category="italiano" id="italiano">Coffee beans Italiano</p>
             </div>
     </div>
 
@@ -102,15 +104,15 @@
             <img src="./assets/img/blog-card.jpg" alt="" class="img-card">
 
             <div class="card-text">
-                <h4>Lorem ipsum dolor sit</h4>
+                <h4>Terrarium</h4>
             </div>
 
             <div class="card-description">
-                <p>Lorem ipsum dolor adipisicing elit. Quisquam, quae.</p>
+                <p>We teach you how to create a terrarium by recycling used coffee</p>
             </div>
 
             <div class="card-btn">
-                <button class="btn-clasic btn-more">Read more</button>
+                <button class="btn-clasic btn-more btn-add">Read more</button>
         </div>
     
     </div>
@@ -118,14 +120,14 @@
 
     <div class="card card-blog" id="container-sing-card">
 
-        <img src="./assets/img/blog-card.jpg" alt="" class="img-card">
+        <img src="./assets/img/blog-coffee.jpg" alt="" class="img-card">
 
         <div class="card-text">
-            <h4>Lorem ipsum dolor sit amet consectetur </h4>
+            <h4>Fertilizer for plants</h4>
         </div>
 
         <div class="card-description">
-            <p>Lorem ipsum dolor sit amet consectetur. Quisquam, quae.</p>
+            <p>Using coffee as fertilizer for plants improves drainage and growth</p>
         </div>
 
         <div class="card-btn">
@@ -137,14 +139,14 @@
 
 <div class="card card-blog" id="container-sing-card">
 
-    <img src="./assets/img/blog-card.jpg" alt="" class="img-card">
+    <img src="./assets/img/blog-exfo.jpg" alt="" class="img-card">
 
     <div class="card-text">
-        <h4>Lorem ipsum dolor sit amet consectetur </h4>
+        <h4>Coffee as a skin scrub</h4>
     </div>
 
     <div class="card-description">
-        <p>Lorem ipsum dolor sit amet consectetur quam, quae.</p>
+        <p>Coffee has properties that help our skin look better</p>
     </div>
 
     <div class="card-btn">
@@ -155,14 +157,14 @@
 
 <div class="card card-blog" id="container-sing-card">
 
-    <img src="./assets/img/blog-card.jpg" alt="" class="img-card">
+    <img src="./assets/img/blog-vela.jpg" alt="" class="img-card">
 
     <div class="card-text">
-        <h4>Lorem ipsum dolor sit amet consectetur </h4>
+        <h4>Scented candles</h4>
     </div>
 
     <div class="card-description">
-        <p>Lorem ipsum dolor sit amet consectetur quae.</p>
+        <p>Step by step on how to create an aromatic candle with used coffee</p>
     </div>
 
     <div class="card-btn">
@@ -173,14 +175,14 @@
 
 <div class="card card-blog" id="container-sing-card">
 
-    <img src="./assets/img/blog-card.jpg" alt="" class="img-card">
+    <img src="./assets/img/blog-birra.jpg" alt="" class="img-card">
 
     <div class="card-text">
-        <h4>Lorem ipsum dolor sit amet consectetur </h4>
+        <h4>Beer stout🖤</h4>
     </div>
 
     <div class="card-description">
-        <p>Lorem ipsum dolor sit amet. Quisquam, quae.</p>
+        <p>We teach you how to prepare a good stout beer to share with your friends</p>
     </div>
 
     <div class="card-btn">
@@ -191,14 +193,14 @@
 
 <div class="card card-blog" id="container-sing-card">
 
-    <img src="./assets/img/blog-card.jpg" alt="" class="img-card">
+    <img src="./assets/img/blog-francesa.jpg" alt="" class="img-card">
 
     <div class="card-text">
-        <h4>Lorem ipsum dolor sit amet consectetur </h4>
+        <h4>How to use the french press coffee maker?</h4>
     </div>
 
     <div class="card-description">
-        <p>Lorem ipsum dolor sit adipisicing elit. Quisquam, quae.</p>
+        <p>We tell you everything about how to use the French coffee maker.</p>
     </div>
 
     <div class="card-btn">
@@ -207,59 +209,7 @@
 
 </div>
 
-<div class="card card-blog" id="container-sing-card">
 
-    <img src="./assets/img/blog-card.jpg" alt="" class="img-card">
-
-    <div class="card-text">
-        <h4>Lorem ipsum dolor sit amet consectetur </h4>
-    </div>
-
-    <div class="card-description">
-        <p>Lorem amet consectetur. Quisquam, quae.</p>
-    </div>
-
-    <div class="card-btn">
-        <button class="btn-add">Read more</button>
-</div>
-
-</div>
-
-<div class="card card-blog" id="container-sing-card">
-
-    <img src="./assets/img/blog-card.jpg" alt="" class="img-card">
-
-    <div class="card-text">
-        <h4>Lorem ipsum dolor sit amet consectetur </h4>
-    </div>
-
-    <div class="card-description">
-        <p>Lorem ipsum adipisicing elit. Quisquam, quae.</p>
-    </div>
-
-    <div class="card-btn">
-        <button class="btn-add">Read more</button>
-</div>
-
-</div>
-
-<div class="card card-blog" id="container-sing-card">
-
-    <img src="./assets/img/blog-card.jpg" alt="" class="img-card">
-
-    <div class="card-text">
-        <h4>Lorem ipsum dolor sit amet consectetur </h4>
-    </div>
-
-    <div class="card-description">
-        <p>Lorem ipsum dolor sit amet Quisquam, quae.</p>
-    </div>
-
-    <div class="card-btn">
-        <button class="btn-add">Read more</button>
-</div>
-
-</div>
 </div>
     <button id="btn-more" class="btn-clasic">See more</button>
 </section>
@@ -278,7 +228,7 @@
         <div class="text-ubication">
             <h3>Find us</h3>
             <p>Bow Ln, London EC4M 9BW, Reino Unido</p>
-            <a href="https://earth.google.com/web/search/Am+Rupenhorn+4d,+14055+Berlin,+Alemania/@51.5127378,-0.0932503,23.31649018a,627.759553d,35y,0h,45t,0r/data=CjkaDwoJL20vMDYzN2RrGAIgASImCiQJzHfmwbZESkARazkIWbg8SkAZzoEmzfmgKkAh9868IfpoKkAoAg">View Google Earth</a>
+            <a href="https://earth.google.com/web/search/Am+Rupenhorn+4d,+14055+Berlin,+Alemania/@51.5127378,-0.0932503,23.31649018a,627.759553d,35y,0h,45t,0r/data=CjkaDwoJL20vMDYzN2RrGAIgASImCiQJzHfmwbZESkARazkIWbg8SkAZzoEmzfmgKkAh9868IfpoKkAoAg" target="_blank">View Google Earth</a>
         </div>
 
         <div class="text-ubication">
@@ -327,7 +277,7 @@
     </div>
 
     <div class="text-footer">
-        <p> Loguito 2022 ©. All rights reserved.</p>
+        <p> C'offee 2022 ©. All rights reserved. Made with love by Solange Leites.</p>
     </div>
     
 </footer>

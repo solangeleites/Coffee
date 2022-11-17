@@ -1,75 +1,75 @@
 const products = [
     {
         id: 1,
-        name: "Café Colombia x 250gr",
+        name: "Coffee Colombia x 250gr",
         price: 25,
         category: "colombia",
-        img: "/assets/img/beans.jpg",
-        description: "This coffee stands out for its smoothness, body and notes of nuts."
+        img: "/assets/img/colombia.webp",
+        description: "It is a coffee with citrus notes and light touches of walnuts. Your body is balanced"
     },
     {
         id: 2,
-        name: "Café Colombia x 500gr",
+        name: "Coffee Colombia x 500gr",
         price: 35,
         category: "colombia",
-        img: "/assets/img/beans.jpg",
-        description: "This coffee stands out for its smoothness, body and notes of nuts."
+        img: "/assets/img/colombia.webp",
+        description: "It is a coffee with citrus notes and light touches of walnuts. Your body is balanced"
     },
     {
         id: 3,
-        name: "Café Colombia x 1kg",
+        name: "Coffee Colombia x 1kg",
         price: 45,
         category: "colombia",
-        img: "/assets/img/beans.jpg",
-        description: "This coffee stands out for its smoothness, body and notes of nuts."
+        img: "/assets/img/colombia.webp",
+        description: "It is a coffee with citrus notes and light touches of walnuts. Your body is balanced"
     },
     {
         id: 4,
-        name: "Café Brasil x 250gr",
+        name: "Coffee Brasil x 250gr",
         price: 30,
         category: "brasil",
-        img: "/assets/img/beans.jpg",
-        description: "This coffee stands out for its smoothness, body and notes of nuts."
+        img: "/assets/img/brasil.webp",
+        description: "Here we are talking coffee with notes of nuts, butter and chocolate with a heavy body."
     },
     {
         id: 5,
-        name: "Café Brasil x 500gr",
+        name: "Coffee Brasil x 500gr",
         price: 40,
         category: "brasil",
-        img: "/assets/img/beans.jpg",
-        description: "This coffee stands out for its smoothness, body and notes of nuts."
+        img: "/assets/img/brasil.webp",
+        description: "Here we are talking coffee with notes of nuts, butter and chocolate with a heavy body."
     },
     {
         id: 6,
-        name: "Café Brasil x 1gr",
+        name: "Coffee Brasil x 1gr",
         price: 50,
         category: "brasil",
-        img: "/assets/img/beans.jpg",
-        description: "This coffee stands out for its smoothness, body and notes of nuts."
+        img: "/assets/img/brasil.webp",
+        description: "Here we are talking coffee with notes of nuts, butter and chocolate with a heavy body."
     },
     {
         id: 7,
-        name: "Café Italiano x 250gr",
+        name: "Coffee Italiano x 250gr",
         price: 40,
         category: "italiano",
-        img: "/assets/img/beans.jpg",
-        description: "This coffee stands out for its smoothness, body and notes of nuts."
+        img: "/assets/img/italiano.webp",
+        description: "It has notes of caramel, vanilla and toasted hazelnut, its body is robust."
     },
     {
         id: 8,
-        name: "Café Italiano x 500gr",
+        name: "Coffee Italiano x 500gr",
         price: 45,
         category: "italiano",
-        img: "/assets/img/beans.jpg",
-        description: "This coffee stands out for its smoothness, body and notes of nuts."
+        img: "/assets/img/italiano.webp",
+        description: "TIt has notes of caramel, vanilla and toasted hazelnut, its body is robust."
     },
     {
         id: 9,
-        name: "Café Italiano x 1gr",
+        name: "Coffee Italiano x 1gr",
         price: 55,
         category: "italiano",
-        img: "/assets/img/beans.jpg",
-        description: "This coffee stands out for its smoothness, body and notes of nuts."
+        img: "/assets/img/italiano.webp",
+        description: "It has notes of caramel, vanilla and toasted hazelnut, its body is robust."
     },
 ]
 

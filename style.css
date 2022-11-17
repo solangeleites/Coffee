@@ -1,23 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 *{margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none; font-family: 'Quicksand', sans-serif;     letter-spacing: 3px;}
-
 :root{
-    --brown: #2C1E1D;
-    --beige: rgb(119, 110, 79);
+    --brown: #323025;
+    --beige: #776e4f;
     --beige-light: #EBECDC;
     --white: #fbfafa;
     --font-small: font-size: 13x;
     --font-medium: font-size: 16px;
     --font-big: font-size: 20px;
     --orange-pastel: #FFAB4F;
-    --red: rgb(198, 47, 47);
+    --red: rgb(214, 153, 153);
     --green: rgb(47, 198, 47);
+    --beige-dark: #bec0ab;
 }
 html{
     scroll-behavior: smooth;
     scroll-padding-bottom: 5px;
     scroll-padding-top: 50px;
 }
+
+
 header{
     display: flex;
     flex-direction: row;
@@ -39,7 +41,7 @@ header{
     height: 100%;
     width: 400px;
 }
-li,a{
+li, a{
     color: var(--beige);
     font-size: var(--font-small);
     font-weight: 700;
@@ -62,24 +64,33 @@ li,a:hover{
     color: var(--brown);
     transition: all 0.3s ease-in-out;
 }
+nav > ul{
+    position: relative;
+}
 .carrito{
-    order: 2;
-    min-height: 100vh;
-    font-size: 30px;
+    display:none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: none;
+    background-color: rgb(136, 206, 136);
     position: absolute;
     top: 50px;
-    left: 80%;
-    width: 20%;
-    background-color: var(--white);
+    right: 0;
+    gap: 30px;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+    z-index: 2;
+    padding: 30px 10px;
+}
+.carrito::-webkit-scrollbar{
+    display: none;
 }
 .carrito > h2{
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--beige);
     text-align: center;
+    margin: 30px 0px;
 }
 .empty-msg{
     font-size: 14px;
@@ -87,7 +98,7 @@ li,a:hover{
     margin-top: 20px;
 }
 .divider{
-    width: 90%;
+    width: 95%;
     height: 2.5px;
     background-color: var(--beige);
     margin-top: 50px;
@@ -101,10 +112,10 @@ li,a:hover{
     font-size: 20px;
 }
 .btn-comprar, .btn-vaciar-carrito{
-    height: 40px;
     width: 70%;
+    height: 40px;
     border:none;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
 }
 .btn-comprar{
@@ -113,6 +124,18 @@ li,a:hover{
 .btn-vaciar-carrito{
     background-color: #cb670a6b;
     margin-bottom: 30px;
+}
+.carrito-productos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
 }
 /* *------------------------------------------------------------------------ */
 main{
@@ -128,7 +151,7 @@ main{
     align-items: center;
     height: 663px;
     width: 90vw;
-    background: url(./assets/img/bgbeans.jpg) center/cover;
+    background: url(./assets/img/bgbeans.jpeg) center/cover;
 }
 .hero-text{
     display: flex;
@@ -139,6 +162,7 @@ main{
     height: 30%;
     width: 70%;
     color: var(--white);
+    text-shadow: black 0.1em 0.1em 0.2em;
     line-height: 40px;
     font-size: 20px
 }
@@ -208,6 +232,7 @@ main{
     margin-left: 5px;
     cursor: pointer;
     color: var(--beige);
+    font-size: 15px;
 }
 .filter >p:hover{
     color: var(--brown);
@@ -215,12 +240,15 @@ main{
 }
 #colombia:hover{
     color:rgb(209, 198, 47) ;
+    font-weight: 700;
 }
 #brasil:hover{
     color:rgb(23, 158, 28) ;
+    font-weight: 700;
 }
 #italiano:hover{
     color:rgb(198, 47, 47) ;
+    font-weight: 700;
 }
 
 .cards{
@@ -266,17 +294,17 @@ main{
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    background: var(--beige);
+    background: var(--brown);
     color: var(--beige-light);
     font-weight: 500;
 }
 .btn-add:hover, .btn-clasic:hover{
-    background: var(--brown);
-    transition: all 0.3s ease-in-out;
+    /* border: 2px dashed var(--brown); */
+    background-color: var(--beige);
 }
 /* ----------------------------------- */
 .section-img{
-    background: url(./assets/img/bgbeans.jpg)no-repeat center center/cover;
+    background: url(./assets/img/coffee.jpg)no-repeat center/cover;
 }
 
 .section-blog{
@@ -289,6 +317,16 @@ main{
     gap: 10px;
     margin: 20px 0px;
 }
+.cards-blog{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+
+}
 /* ----------------------------------- */
 
 .section-ubication-contact{
@@ -297,6 +335,7 @@ main{
     justify-content: flex-start;
     align-items: center;
     gap: 130px;
+    background-color: var(--beige);
 }
 .circle-ubication{
     display: flex;
@@ -306,13 +345,15 @@ main{
     height: 300px;
     width: 300px;
     border-radius: 50%;
-    background-color: var(--beige);
+    background-color: var(--beige-dark);
     margin: 50px;
+    position: relative;
 }
 
 .img-ubication{
     height: 350px;
     width: 350px;
+    left: 100px;
     position: absolute;
 }
 .img-ubication:hover{
@@ -341,6 +382,14 @@ main{
     font-weight: 500;
     margin-bottom: 8px;
 }
+.text-ubication > a{
+    font-weight: 700;
+    color: var(--brown);
+}
+.text-ubication > a:hover{
+    font-weight: 700;
+    color: var(--beige-light);
+}
 
 .reserve{
     display: flex;
@@ -361,6 +410,7 @@ main{
 .form > h3{
     text-align: center;
     font-size: 25px;
+    color: var(--beige-light);
 }
 .form_field > input{
     width: 300px;
@@ -369,9 +419,10 @@ main{
     padding-left: 5px;
     border: none;
     outline: none;
-    background-color: var(--white);
-    border-bottom: 1px solid var(--brown);
-    border-left: 1px solid var(--brown);
+    background-color: var(--beige);
+    border-bottom: 2px dashed var(--brown);
+    border-left: 2px dashed var(--brown);
+    color: var(--beige-light);
 }
 .form > textarea{
     width: 300px;
@@ -380,11 +431,13 @@ main{
     padding: 5px;
     border: none;
     outline: none;
-    background-color: var(--white);
-    border-bottom: 1px solid var(--brown);
-    border-left: 1px solid var(--brown);
+    background-color: var(--beige);
+    border-bottom: 2px dashed var(--brown);
+    border-left: 2px dashed var(--brown);
 }
-
+.form_field > input::placeholder, .form > textarea::placeholder{
+    color: var(--beige-light);
+}
 footer{
     display: flex;
     flex-direction: row;
@@ -394,6 +447,7 @@ footer{
     height: 70px;
     padding: 0px 10px 0px 10px;
     text-align: center;
+    font-size: 12px;
 }
 .img-footer > img{
     height: 18px;
@@ -413,4 +467,11 @@ footer{
     width: 300px;
     height: 40px;
     color: var(--red);
+}
+#cat-img{
+    width: 380px;
+}
+.btn-send:hover{
+        border: 2px dashed var(--brown);
+        background-color: var(--beige);
 }

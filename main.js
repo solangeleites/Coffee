@@ -125,17 +125,17 @@ const debounce = (fn, delay = 500) => {
 //? Funcion para renderizar el html.
 const renderProduct = products => {
     const {id,name, price, img, description} = products;
-    return`<div class="card">
-                <img src=${img} alt=${name}  class="img-card">
-                    <div class="card-text">
+    return`<div class="card" id= "card-cat">
+                <img src=${img} alt=${name}  class="img-card" id="cat-img">
+                    <div class="card-text" id="cat-text">
                         <h4>${name}</h4>
-                        <span class="price">${price}EUR</span>
+                        <span class="price" id="cat-price">${price}EUR</span>
                     </div>
-            <div class="card-description">
+            <div class="card-description" id="cat-description">
                 <p>${description}</p>
             </div>
-            <div class="card-btn">
-                <button class="btn-add"
+            <div class="card-btn" >
+                <button class="btn-add" id="cat-btn"
                 data-id= '${id}'
                 data-name= '${name}'
                 data-price= '${price}'
@@ -174,9 +174,15 @@ const renderFilteredProducts = (category) => {
 //? Funciones para abrir el menu toggle y el carrito.
 const openMenu = () => {
     $navbarList.classList.toggle('open-menu')
+    
+    ? $carritoMenu.classList.contains('open-carrito')
+    : $carritoMenu.classList.remove('open-carrito')
 }
 const openCarrito = () => {
-    $carritoMenu.classList.toggle('open-carrito')
+    $carritoMenu.classList.toggle('open-carrito') 
+    
+    ? $navbarList.classList.contains('open-menu')
+    : $navbarList.classList.remove('open-menu')
 }
 const openFilter = () => {
     $filterToShow.classList.toggle('open-filter')
@@ -200,7 +206,7 @@ const renderCartProduct = (cartProduct) => {
 }
 const renderCart = () => {
     if(!cart.length){
-        $containerCart.innerHTML = `<p class="empty-msg">No hay productos en el carrito.</p>`
+        $containerCart.innerHTML = `<p class="empty-msg">There are no products in the cart</p>`
         return;
     }
     $containerCart.innerHTML = cart.map(renderCartProduct).join('')
@@ -245,10 +251,10 @@ const addProduct = (e) => {
 
     if(isExistingCartProd(product)){
         addUnitProd(product)
-        modalAddProd("Se  agregó una unidad más al carrito")
+        modalAddProd("You added one more unit to the cart")
     } else {
         createCartProd(product)
-        modalAddProd("El producto se agregó al carrito")
+        modalAddProd("The product was added to the cart")
     }
     checkStateCart()
 }
@@ -268,7 +274,7 @@ const handleQuantity = (e) =>{
 const downBtn = (id) => {
     let existingCartProd = cart.find((item) => item.id === id)
     if(existingCartProd.quantity === 1){
-        if(window.confirm('¿Desea eliminar el producto del carrito?')){
+        if(window.confirm('Do you want to remove the product from the shopping cart?')){
             removeProdCart(existingCartProd)
         }return;
     }
@@ -297,10 +303,10 @@ const completeCartAction = (confirmMsg, successMsg) => {
     }
 }
 const completeBuy = () => {
-    completeCartAction('Desea completar su compra?', 'Gracias por tu compra, vuelve pronto!')
+    completeCartAction('Do you want to complete your purchase?', 'Thanks for your purchase 🤍')
 }
 const btnEmptyCart = () => {
-    completeCartAction('Desea vaciar el carrito?', 'No hay productos en el carrito')
+    completeCartAction('Do you want to empty the shopping cart?', 'There are no products in the cart')
 }
 //? Función para el modal
 const modalAddProd = (message) => {
@@ -323,7 +329,16 @@ const showMoreCards = () => {
     $btnSeeMore.style.display = 'none'
  }
 }
+const closeOnScroll = () => {
+    if(
+        !$barsMenu.classList.contains('open-menu') && 
+        !$carritoBtn.classList.contains('open-carrito')
+    ) 
+    return;
 
+    $barsMenu.classList.remove('open-menu')
+    $carritoBtn.classList.remove('open-carrito')
+} 
 
 //todo: Función inicializadora.
 const init = () => {
@@ -355,5 +370,6 @@ const init = () => {
     $buyBtn.addEventListener('click', completeBuy)
     $EmptyCart.addEventListener('click', btnEmptyCart)
     $btnSeeMore.addEventListener('click', showMoreCards)
+    window.addEventListener('scroll', closeOnScroll)
 }
 init()
