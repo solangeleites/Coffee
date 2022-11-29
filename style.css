@@ -13,10 +13,13 @@
     --green: rgb(47, 198, 47);
     --beige-dark: #bec0ab;
 }
+
+
 html{
     scroll-behavior: smooth;
     scroll-padding-bottom: 5px;
     scroll-padding-top: 50px;
+
 }
 header{
     background-color: var(--brown);
@@ -27,16 +30,17 @@ header{
     top: 0;
     color: var(--beige-light);
     height: 60px;
-    width: 100%;
     padding: 0px 30px;
     margin: 0 auto;
     z-index: 999;
+    width: 100%;
 }
 .logo{
 height: 89.5px;
 width: 3.49%;
 top: 0px;
 position: absolute;
+
 }
 .icono-carrito, .carrito-icon{
     font-size: 18px;
@@ -46,7 +50,8 @@ position: absolute;
 }
 .icono-carrito:hover, .carrito-icon:hover{
     scale: 1.1;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
+
 }
 .bars-menu{
     display: none;
@@ -67,6 +72,7 @@ position: absolute;
     color: var(--beige-light);
     font-size: 16px;
     font-weight: 500;
+
 }
 .carrito{
     position: absolute;
@@ -84,7 +90,7 @@ position: absolute;
     z-index: 2;
     min-width: 375px;
     transform: translate(200%);
-    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+    transition: all 0.5s ease-in;
 }
 .carrito > h2{
     font-size: 15px;
@@ -196,7 +202,7 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--brown)
+    background-color: var(--brown);
 }
 /* Hero */
 .hero{
@@ -538,13 +544,7 @@ footer{
 
 
 /*! Para javascript */
-.open-menu{
-    display: none;
-    flex-direction: column;
-    justify-content:space-evenly;
-    align-items: center;
 
-}
 .open-carrito{
     transform: translate(0%);
     transition: all 0.5s ease-in-out;

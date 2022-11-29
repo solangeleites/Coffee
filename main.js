@@ -171,22 +171,7 @@ const renderFilteredProducts = (category) => {
     const productList = products.filter((product) => product.category === category);
     $containerFilteredCards.innerHTML = productList.map(renderProduct).join('')
 }
-//? Funciones para abrir el menu toggle y el carrito.
-const openMenu = () => {
-    $navbarList.classList.toggle('open-menu')
-    
-    ? $carritoMenu.classList.contains('open-carrito')
-    : $carritoMenu.classList.remove('open-carrito')
-}
-const openCarrito = () => {
-    $carritoMenu.classList.toggle('open-carrito') 
-    
-    ? $navbarList.classList.contains('open-menu')
-    : $navbarList.classList.remove('open-menu')
-}
-const openFilter = () => {
-    $filterToShow.classList.toggle('open-filter')
-}
+
 //? Empiezo a crear funciones para agregar productos al querido carrito
 const renderCartProduct = (cartProduct) => {
     const {id, name, img, price, quantity} = cartProduct
@@ -329,16 +314,37 @@ const showMoreCards = () => {
     $btnSeeMore.style.display = 'none'
  }
 }
+//?! Funciones para abrir el menu toggle y el carrito.
+const openMenu = () => {
+    $navbarList.classList.toggle('open-menu')
+    if($carritoMenu.classList.contains('open-carrito')){
+        $carritoBtn.classList.remove('open-carrito')
+    }
+}
+const openCarrito = () => {
+    $carritoMenu.classList.toggle('open-carrito') 
+    
+    if($navbarList.classList.contains('open-menu')){
+        $navbarList.classList.contains.remove('open-menu')
+    }
+}
+const openFilter = () => {
+    $filterToShow.classList.toggle('open-filter')
+}
+
+//! ?Función para el cierre de menus de interfaces cuando se haga un scroll
 const closeOnScroll = () => {
     if(
-        !$barsMenu.classList.contains('open-menu') && 
-        !$carritoBtn.classList.contains('open-carrito')
+        !$navbarList.classList.contains('open-menu') && 
+        !$carritoMenu.classList.contains('open-carrito') &&
+        !$filterToShow.classList.contains('open-filter')
     ) 
     return;
-
-    $barsMenu.classList.remove('open-menu')
-    $carritoBtn.classList.remove('open-carrito')
+    $navbarList.classList.remove('open-menu')
+    $carritoMenu.classList.remove('open-carrito')
+    $filterToShow.classList.remove('open-filter')
 } 
+
 
 //todo: Función inicializadora.
 const init = () => {

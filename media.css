@@ -1,15 +1,155 @@
+/* Tablet */
+@media (max-width: 992px) {
+    #coffees{
+        height: 100%;
+        padding: 10px 0px;
+    }
+    .cards{
+        flex-direction: column;
+        height: 100%;
+        gap: 30px;
+    }
+    .container-filter{
+        padding: 15px 0px;
+    }
+    .container-filter > h4{
+        width: 59.5%;
+        margin: 0 auto;
+        position: relative;
+    }
+    .filter{
+        width: 59.6%;
+        top: 37px;
+        right: 20%;
+        position: absolute;
+    }
+    .section-ubication-contact{
+        flex-direction: column;
+        gap: 20px;
+        height: 100%;
+    }
+    .circle-ubication, .img-ubication{
+        display: none;
+    }
+    .form_field > input{
+        width: 380px;
+    }
+    .open-menu{
+    display: flex;
+}
+}
+/*! ----------------------------- */
+
+/* @media (max-width:1280px){
+    .selection > h3{
+        font-size: 25px;
+    }
+    .container-filter{
+        top: 10%;
+    }
+    .container-filter > h4{
+        width: 31%;
+        left: 390px;
+        top: 88px;
+    }
+    .filter{
+        width: 31%;
+        right: 0px;
+    }
+    .card{
+        width: 350px;
+    }
+    .img-card{
+        width: 300px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    #blog > h3{
+        text-align: center;
+    }
+    #container-sing-card{
+        height: 620px;
+    }
+    .circle-ubication, .img-ubication{
+        display: none;
+    }
+    .form_field > input{
+        width: 380px;
+    }
+} */
+/* -------------------- */
+/* @media(min-width: 1400px){
+    #coffees{
+        height: 100%;
+    }
+    .container-filter{
+        padding: 20px 0px 0px ;
+        width: 57%;
+        top: 130px;
+        left: 435px;
+    }
+    .filter{
+        top: 50px;
+        right: 162px;
+    }
+    .cards{
+        flex-wrap: wrap;
+    }
+} */
+/* @media(min-width: 1600px){
+
+    .selection > h3{
+        font-size: 30px;
+    }
+    .container-filter{
+        left: 303px;
+        top: 70px;
+        padding: 0;
+    }
+    .filter-by{
+        font-size: 25px;
+        width: 42%;
+        left: 182px;
+        top: 0px;
+    }
+    .filter{
+        right: 0px;
+        top: 35px;
+    }
+    .filter > p{
+        font-size: 20px;
+    }
+    .card{
+        height: 750px;
+        width: 450px;
+    }
+    .img-card{
+        height: 430px;
+        width: auto;
+        object-fit: cover;
+    }
+    .card-text, .card-description{
+        font-size: 22px;
+        width: 95%;
+    }
+    .btn-add, .btn-clasic{
+        font-size: 20px;
+        height: 50px;
+        width: 200px;
+    }
+} */
+
+
 /** Media para celular */
 @media (max-width: 576px){
-    header{
-        min-width: 300px;
-    }
     .logo{
         height: 80%;
         width: auto;
         top: 5px;
     }
     .bars-menu{
-        display: flex;
+        display:flex;
         color: var(--beige-light);
         font-size: 20px;
         cursor: pointer;
@@ -35,6 +175,7 @@
         width: 100%;
         padding-bottom: 20px;
         text-align: center;
+        display: none;
     }
     /* --------------- bendito carrito */
     .carrito{
@@ -44,7 +185,6 @@
         left: -230px;
         padding: 20px 10px;
         background: var(--beige);
-        min-width: 375px;
     }
     .carrito > h2{
         font-size: 17px;
@@ -122,157 +262,13 @@
     width: 100%;
     text-align: center;
 }
+.open-menu{
+    display: flex;
 }
+.form_field > input{
+    width: 300px;
+}
+}
+
+
 /*! --------------------------- */
-/* Tablet */
-@media (max-width: 992px) {
-    #coffees{
-        height: 100%;
-        padding: 10px 0px;
-    }
-    .cards{
-        flex-direction: column;
-        height: 100%;
-        gap: 30px;
-    }
-    .container-filter{
-        padding: 15px 0px;
-    }
-    .container-filter > h4{
-        width: 59.5%;
-        margin: 0 auto;
-        position: relative;
-    }
-    .filter{
-        width: 59.5%;
-        top: 37px;
-        right: 137px;
-        position: absolute;
-    }
-    /* --------------------- */
-    .section-ubication-contact{
-        flex-direction: column;
-        gap: 20px;
-        height: 100%;
-    }
-    .circle-ubication, .img-ubication{
-        display: none;
-    }
-    .form_field > input{
-        width: 380px;
-    }
-}
-/*! ----------------------------- */
-
-@media (min-width: 834px) {
-    .filter{
-        width: 55%;
-        right: 165px;
-    }
-    .container-filter > h4{
-        width: 55%;
-        margin: 0 auto;
-        position: relative;
-    }
-}
-@media (max-width:1280px){
-    .selection > h3{
-        font-size: 25px;
-    }
-    .container-filter > h4{
-        width: 31%;
-        left: 390px;
-        top: 88px;
-    }
-    .filter{
-        width: 31%;
-        top: 110px;
-        right: 0px;
-    }
-    .card{
-        width: 350px;
-    }
-    .img-card{
-        width: 300px;
-        height: auto;
-        object-fit: cover;
-    }
-
-    #blog > h3{
-        text-align: center;
-    }
-    #container-sing-card{
-        height: 620px;
-    }
-    /* -------- */
-    .circle-ubication, .img-ubication{
-        display: none;
-    }
-    .form_field > input{
-        width: 380px;
-    }
-}
-/* -------------------- */
-@media(min-width: 1400px) and (max-width: 1919.98px){
-    #coffees{
-        height: 100%;
-    }
-    .container-filter{
-        padding: 20px 0px 0px ;
-        width: 57%;
-        top: 130px;
-        left: 435px;
-    }
-    .filter{
-        top: 50px;
-        right: 162px;
-    }
-    .cards{
-        flex-wrap: wrap;
-    }
-}
-@media(min-width: 1600px){
-
-    .selection > h3{
-        font-size: 30px;
-    }
-    .container-filter{
-        left: 303px;
-        top: 70px;
-        padding: 0;
-    }
-    .filter-by{
-        font-size: 25px;
-        width: 42%;
-        left: 182px;
-        top: 0px;
-    }
-    .filter{
-        right: 0px;
-        top: 35px;
-    }
-    .filter > p{
-        font-size: 20px;
-    }
-    .card{
-        height: 750px;
-        width: 450px;
-    }
-    .img-card{
-        height: 430px;
-        width: auto;
-        object-fit: cover;
-    }
-    .card-text, .card-description{
-        font-size: 22px;
-        width: 95%;
-    }
-    .btn-add, .btn-clasic{
-        font-size: 20px;
-        height: 50px;
-        width: 200px;
-    }
-
-
-
-}
