@@ -1,13 +1,29 @@
 /* Tablet */
-@media (max-width: 992px) {
+@media (min-width: 992px) {
+    .logo{
+        height: 80%;
+        width: auto;
+        top: 5px;
+    }
     #coffees{
         height: 100%;
         padding: 10px 0px;
     }
     .cards{
-        flex-direction: column;
+        justify-content: center;
         height: 100%;
         gap: 30px;
+    }
+    .card-text{
+        display: block;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .img-card{
+        width: 250px;
+        height: auto;
+        object-fit: cover;
     }
     .container-filter{
         padding: 15px 0px;
@@ -24,7 +40,7 @@
         position: absolute;
     }
     .section-ubication-contact{
-        flex-direction: column;
+        justify-content: space-around;
         gap: 20px;
         height: 100%;
     }
@@ -37,6 +53,27 @@
     .open-menu{
     display: flex;
 }
+textarea, .form_field > input{
+    width: 300px;
+}
+.card-blog{
+    width: 350px;
+}
+#blog > h3{
+    text-align: center;
+}
+}
+/*! ----------------------------- */
+/* Tablet */
+@media (max-width: 768px){
+    .logo{
+        height: 80%;
+        width: auto;
+        top: 5px;
+    }
+    textarea, .form_field > input{
+        width: 300px;
+    }
 }
 /*! ----------------------------- */
 
@@ -65,7 +102,6 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        gap: 150px;
         background-color: var(--brown);
         gap: 50px;
         position: absolute;
