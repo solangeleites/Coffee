@@ -29,6 +29,7 @@ const $containerCart = d.querySelector('.carrito-productos')
 const $totalCart = d.querySelector('.carrito-total')
 const $total = d.querySelector('.total')
 
+
 // ?Funciones para guardar el carrito el ls
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 const saveLocalStorage = (cartProduct) => {
