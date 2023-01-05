@@ -14,6 +14,8 @@ const $containerFilters = d.querySelector('.filter')
 const $filters = d.querySelectorAll('.category')
 // Botón de ver más:
 const $btnSeeMore = d.querySelector('#btn-more')
+// Botón de ver menos:
+const $btnSeeLess = d.querySelector('#btn-less')
 // Elementos para la validación del formulario:
 const $form = d.querySelector('#form')
 const $name = d.querySelector('#name')
@@ -313,8 +315,23 @@ const showMoreCards = () => {
  currentItem +=3;
  if(currentItem >= boxes.length){
     $btnSeeMore.style.display = 'none'
+    $btnSeeLess.style.display = 'inline-block'
  }
 }
+// ?Funcion para el boton de ver menos
+const showLessCards = () => {
+    let boxes = [...document.querySelectorAll('#container-all-cards #container-sing-card')]
+
+  for(let i = currentItem - 3; i < currentItem; i++){
+    boxes[i].style.display = "none"
+  }
+  currentItem -= 3;
+  if(currentItem <= 3){
+    $btnSeeLess.style.display = 'none'
+    $btnSeeMore.style.display = 'inline-block' 
+  }
+}
+
 //?! Funciones para abrir el menu toggle y el carrito.
 const openMenu = () => {
     $navbarList.classList.toggle('open-menu')
@@ -377,6 +394,7 @@ const init = () => {
     $buyBtn.addEventListener('click', completeBuy)
     $EmptyCart.addEventListener('click', btnEmptyCart)
     $btnSeeMore.addEventListener('click', showMoreCards)
+    $btnSeeLess.addEventListener('click', showLessCards)
     window.addEventListener('scroll', closeOnScroll)
 }
 init()
