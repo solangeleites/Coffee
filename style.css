@@ -269,7 +269,7 @@ main{
 .container-filter > h4{
     border: 2px dashed var(--beige);
     border-radius: 3px;
-    width: 15%;
+    width: 330px;
     text-align: center;
     cursor: pointer;
     border-bottom: 2px solid var(--beige);
@@ -284,7 +284,7 @@ main{
     flex-direction: column;
     justify-content: space-around;
     align-items: baseline;
-    width: 250px;
+    width: 330px;
     height: 100px;
     position: absolute;
     top: 24.5px;

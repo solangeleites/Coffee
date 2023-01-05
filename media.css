@@ -1,210 +1,355 @@
-/* Tablet */
-@media (min-width: 992px) {
-    .logo{
-        height: 80%;
-        width: auto;
-        top: 5px;
+/* Desktops */
+@media (max-width: 1650px) {
+    #coffees {
+        height: auto;
     }
-    #coffees{
-        height: 100%;
-        padding: 10px 0px;
+    .cards {
+        height: auto;
+        justify-content: space-between;
     }
-    .cards{
-        justify-content: center;
-        height: 100%;
-        gap: 30px;
+    .card {
+        width: 330px;
     }
-    .card-text{
+    .img-card {
+        object-fit: cover;
+        width: 300px;
+    }
+    .card-text {
         display: block;
         font-size: 20px;
         text-align: center;
     }
-
-    .img-card{
-        width: 250px;
-        height: auto;
-        object-fit: cover;
-    }
-    .container-filter{
-        padding: 15px 0px;
-    }
-    .container-filter > h4{
-        width: 59.5%;
-        margin: 0 auto;
-        position: relative;
-    }
-    .filter{
-        width: 59.6%;
-        top: 37px;
-        right: 20%;
-        position: absolute;
-    }
-    .section-ubication-contact{
-        justify-content: space-around;
-        gap: 20px;
-        height: 100%;
-    }
-    .circle-ubication, .img-ubication{
-        display: none;
-    }
-    .form_field > input{
-        width: 380px;
-    }
-    .open-menu{
-    display: flex;
-}
-textarea, .form_field > input{
-    width: 300px;
-}
-.card-blog{
-    width: 350px;
-}
-#blog > h3{
-    text-align: center;
-}
-}
-/*! ----------------------------- */
-/* Tablet */
-@media (max-width: 768px){
-    .logo{
-        height: 80%;
-        width: auto;
-        top: 5px;
-    }
-    textarea, .form_field > input{
+    textarea, .form_field > input {
         width: 300px;
     }
+    #location{
+        height: auto;
+        justify-content: center;
+    }
+    .img-ubication{
+    left: 129px;
+    }
 }
-/*! ----------------------------- */
 
-/** Media para celular */
-@media (max-width: 576px){
-    .logo{
-        height: 80%;
-        width: auto;
-        top: 5px;
-    }
-    .bars-menu{
-        display:flex;
-        color: var(--beige-light);
-        font-size: 20px;
-        cursor: pointer;
-        position: relative;
-        left: 150px;
-    }
-    .carrito-icon{
-        color: var(--beige-light);
-    }
-    .navbar{
-        position: relative;
-    }
-    .navbar-list{
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        background-color: var(--brown);
-        gap: 50px;
-        position: absolute;
-        top: 30px;
-        right: -211px;
-        min-width: 576px;
-        width: 100%;
-        padding-bottom: 20px;
-        text-align: center;
-        display: none;
-    }
-    /* --------------- bendito carrito */
-    .carrito{
-        top: 30px;
-        right: 0px;
-        left: -233px;
-        padding: 20px 10px;
-        background: var(--beige);
-    }
-    .carrito > h2{
-        font-size: 17px;
-    }
-    .carrito-productos{
-        flex-wrap: wrap;
-    }
-    .text-cartProd{
-        text-align: center;
-        line-height: 25px;
-    }
-    .text-cartProd > h3{
-        font-size: 15px;
-        font-weight: 600;
-    }
+@media (max-width: 1450px) {
+  #coffees {
+    height: auto;
+  }
+  .cards {
+    height: auto;
+    justify-content: space-between;
+  }
+  .card {
+    width: 330px;
+  }
+  .img-card {
+    object-fit: cover;
+    width: 300px;
+  }
+  .card-text {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+  }
+  textarea, .form_field > input {
+    width: 300px;
+  }
+  #location{
+    height: auto;
+    justify-content: space-around;
+  }
+  .circle-ubication, .img-ubication {
+    display: none;
+  }
+}
+/* Desktops */
+@media (max-width: 1200px) {
+  #coffees {
+    height: auto;
+  }
+  .cards {
+    justify-content: center;
+    height: auto;
+    gap: 15px;
+  }
+  .card {
+    width: 290px;
+  }
+  .card-blog {
+    width: 281px;
+  }
+  .img-card {
+    width: 270px;
+    height: auto;
+    object-fit: cover;
+  }
+  .card-text {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+  }
 
-    .up:hover, .down:hover{
-        background-color: var(--brown);
-        color: var(--beige-light);
-    }
-    .carrito-total{
-        gap: 50px;
-    }
-    /* -------------------- */
+  .container-filter {
+    padding-top: 10px;
+  }
+  .container-filter > h4 {
+    width: 29%;
+    position: relative;
+    right: 5%;
+  }
+  .filter {
+    width: 29%;
+    top: 31.2px;
+    right: 5%;
+    position: absolute;
+  }
+  #location {
+    height: auto;
+    justify-content: center;
+  }
+  textarea,
+  .form_field > input {
+    width: 300px;
+  }
+  .circle-ubication,
+  .img-ubication {
+    display: none;
+  }
+}
+/* Tablet */
+@media (max-width: 992px) {
+  .logo {
+    height: 80%;
+    width: auto;
+    top: 5px;
+  }
+  #coffees {
+    height: 100%;
+    padding: 10px 0px;
+  }
+  .cards {
+    justify-content: center;
+    height: 100%;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
 
-    .container-filter{
-        width: 95%;
-        position: relative;
-        right: 0px;
-    }
-    .container-filter > h4{
-        width: 100%;
-    }
-    .filter{
-        width: 100%;
-        gap: 10px;
-        right: 0px;
-    }
-    /* --------------- */
-    #coffees{
-        height: 100%;
-        gap: 20px;
-    }
-.cards{
+  .card-text {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .img-card {
+    width: 280px;
+    height: auto;
+    object-fit: cover;
+  }
+  .container-filter {
+    padding: 15px 0px;
+  }
+  .container-filter > h4 {
+    width: 290px;
+    right: 62px;
+    position: relative;
+  }
+  .filter {
+    width: 290px;
+    top: 37px;
+    right: 62px;
+    position: absolute;
+  }
+  .section-ubication-contact {
+    justify-content: space-around;
+    gap: 20px;
+    height: 100%;
+  }
+  .circle-ubication,
+  .img-ubication {
+    display: none;
+  }
+  .form_field > input {
+    width: 380px;
+  }
+  .open-menu {
+    display: flex;
+  }
+  textarea,
+  .form_field > input {
+    width: 300px;
+  }
+  .card-blog {
+    width: 300px;
+  }
+  #blog > h3 {
+    text-align: center;
+  }
+  #container-all-cards {
+    justify-content: center;
+  }
+} /* Tablet */
+@media (max-width: 768px) {
+  .logo {
+    height: 80%;
+    width: auto;
+    top: 5px;
+  }
+  textarea,
+  .form_field > input {
+    width: 300px;
+  }
+  .text-footer {
+    text-align: center;
+    padding: 5px;
+  }
+  .cards {
+    flex-direction: column;
+  }
+  .selection > h3 {
+    text-align: center;
+  }
+  .container-filter > h4 {
+    width: 290px;
+    gap: 10px;
+    right: 195px;
+    position: relative;
+  }
+  .filter {
+    width: 290px;
+    top: 37px;
+    right: 195px;
+    position: absolute;
+  }
+} /* Media para celular */
+@media (max-width: 576px) {
+  .logo {
+    height: 80%;
+    width: auto;
+    top: 5px;
+  }
+  .bars-menu {
+    display: flex;
+    color: var(--beige-light);
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    left: 150px;
+  }
+  .carrito-icon {
+    color: var(--beige-light);
+  }
+  .navbar {
+    position: relative;
+  }
+  .navbar-list {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--brown);
+    gap: 50px;
+    position: absolute;
+    top: 30px;
+    right: -211px;
+    min-width: 576px;
+    width: 100%;
+    padding-bottom: 20px;
+    text-align: center;
+    display: none;
+  }
+  /* --------------- bendito carrito */
+  .carrito {
+    top: 30px;
+    right: 0px;
+    left: -233px;
+    padding: 20px 10px;
+    background: var(--beige);
+  }
+  .carrito > h2 {
+    font-size: 17px;
+  }
+  .carrito-productos {
+    flex-wrap: wrap;
+  }
+  .text-cartProd {
+    text-align: center;
+    line-height: 25px;
+  }
+  .text-cartProd > h3 {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .up:hover,
+  .down:hover {
+    background-color: var(--brown);
+    color: var(--beige-light);
+  }
+  .carrito-total {
+    gap: 50px;
+  }
+  /* -------------------- */
+
+  .container-filter {
+    width: 300px;
+    position: relative;
+    right: 0px;
+  }
+  .container-filter > h4 {
+    width: 300px;
+    right: 0px;
+  }
+  .filter {
+    width: 300px;
+    gap: 10px;
+    right: 0px;
+  }
+  /* --------------- */
+  #coffees {
+    height: 100%;
+    gap: 20px;
+  }
+  .cards {
     flex-direction: column;
     height: 100%;
     width: 100%;
     gap: 20px;
-}
-.card{
+  }
+  .card {
     width: 300px;
     height: auto;
     padding: 20px 0px;
-}
-.img-card{
+  }
+  .img-card {
     width: 250px;
     height: auto;
     object-fit: cover;
-}
-.card-text, .card-description{
+  }
+  .card-text,
+  .card-description {
     width: 97%;
     text-align: center;
     font-size: 15px;
     margin: 10px 0px;
-}
-/* --------------------- */
-.section-ubication-contact{
+  }
+  /* --------------------- */
+  .section-ubication-contact {
     flex-direction: column;
     gap: 20px;
     height: 100%;
-}
-.circle-ubication, .img-ubication{
+  }
+  .circle-ubication,
+  .img-ubication {
     display: none;
-}
-.text-footer{
+  }
+  .text-footer {
     width: 100%;
     text-align: center;
-}
-.open-menu{
+  }
+  .open-menu {
     display: flex;
-}
-.form_field > input, textarea {
+  }
+  .form_field > input,
+  textarea {
     width: 300px;
+  }
 }
-}
-
-
-/*! --------------------------- */
