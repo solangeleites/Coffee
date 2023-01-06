@@ -238,6 +238,12 @@
   .carrito-icon {
     color: var(--beige-light);
   }
+  .juntar{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-right:0px ;
+  }
   .navbar {
     position: relative;
   }
