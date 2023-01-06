@@ -53,22 +53,8 @@ position: absolute;
     scale: 1.1;
     transition: all 0.3s ease-in-out;
 }
-.icono-user, .fa-user{
-    font-size: 18px;
-    color: var(--beige-light);
-    order: 2;
-    cursor: pointer;
-    margin-right:25px;
-}
-.icono-user:hover, .fa-user:hover{
-    scale: 1.1;
-    transition: all 0.3s ease-in-out;
-}
-.juntar{
-    order: 2;
-    display: flex;
-    gap: 50px;
-}
+
+
 .bars-menu{
     display: none;
 }
