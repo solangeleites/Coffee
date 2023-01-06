@@ -1,0 +1,22 @@
+@media (max-width:576px){
+
+    .title{
+        font-size: 30px;
+    }
+    .ask{
+        font-size: 15px;
+    }
+    form{
+        width: 300px;
+    }
+    input{
+        width: 200px;
+        font-size: 15px;
+    }
+    input:focus{
+        font-size: 15px;
+    }
+    label{
+        font-size: 15px;
+    }
+}

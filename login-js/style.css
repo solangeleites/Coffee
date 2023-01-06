@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*{margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none; font-family: 'Quicksand', sans-serif;     letter-spacing: 3px;}
+:root{
+    --brown: #323025;
+    --beige: #776e4f;
+    --beige-light: #EBECDC;
+    --white: #fbfafa;
+    --font-small: font-size: 13x;
+    --font-medium: font-size: 16px;
+    --font-big: font-size: 20px;
+    --orange-pastel: #FFAB4F;
+    --red: rgb(214, 153, 153);
+    --green: rgb(47, 198, 47);
+    --beige-dark: #bec0ab;
+}
+body{
+    background: url(./assets/sign-bg.jpg) no-repeat center center/cover;
+    height: 100%;
+}
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 10px;
+}
+.title{
+    color: var(--beige-light);
+    text-shadow: #323025 0px 0px 10px;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.back{
+    color: var(--beige-light);
+}
+.ask{
+    color: var(--beige-light);
+    text-shadow: #323025 0px 0px 10px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+.login:hover{
+    color: var(--beige-light);
+    cursor: pointer;
+}
+.login:visited{
+    color: var(--red);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background:  #ebecdc72;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #323025;
+    width: 400px;
+    gap: 15px;
+}
+label{
+    color: var(--beige-light);
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+input{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 2.5px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--beige-light);
+    text-shadow: #1b1a1a 0px 0px 10px;
+    background: none;
+    outline: none;
+    border-bottom: 1px solid var(--beige-light);  
+}
+input::placeholder{
+    color: var(--beige-light);
+    text-shadow: #1b1a1a 0px 0px 10px;
+}
+input:focus{
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+}
+input:focus{
+    border-bottom: 1px solid var(--beige);
+}
+button{
+    border: none;
+    border-radius: 2.5px;
+    padding:15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--beige-light);
+    text-shadow: #1b1a1a 0px 0px 10px;
+    background: var(--beige);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    border: 1px solid var(--beige-light);
+    border-radius: 5px;
+}
+button:hover{
+    background: var(--brown);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Para javascript */
+
+.form.success input{
+    border-bottom: 2px solid #28a745
+}
+.form.error input {
+    border-bottom: 2px solid var(--red);
+}
+.small{
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--red);
+    padding: 4px 0px;
+}
