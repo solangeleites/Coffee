@@ -47,11 +47,11 @@ position: absolute;
     color: var(--beige-light);
     order: 2;
     cursor: pointer;
-    gap: 0px
+    gap: 0px;
+    transition: all 0.3s ease-in-out;
 }
 .icono-carrito:hover, .carrito-icon:hover{
     scale: 1.1;
-    transition: all 0.3s ease-in-out;
 }
 
 
@@ -166,10 +166,10 @@ position: absolute;
 .total{
     font-size: 22px;
     font-weight: 700;
+        transition: all 0.3s ease;
 }
 .total:hover{
     scale: 1.1;
-    transition: all 0.3s ease;
 }
 .btn-comprar{
     background-color: var(--brown);
@@ -181,10 +181,10 @@ position: absolute;
     width: 50%;
     padding: 10px;
     border: none;
+    transition: all 0.3s ease;
 }
 .btn-comprar:hover, .btn-vaciar-carrito:hover{
     scale: 1.1;
-    transition: all 0.3s ease;
 }
 .btn-vaciar-carrito{
     background-color: var(--beige);
@@ -275,11 +275,11 @@ main{
     text-align: center;
     cursor: pointer;
     border-bottom: 2px solid var(--beige);
+        transition: all 0.3s ease-in-out;
 }
 .container-filter > h4:hover{
     color: var(--beige-light);
     background-color: var(--beige);
-    transition: all 0.3s ease-in-out;
 }
 .filter{
     display: none;
@@ -309,10 +309,10 @@ main{
     font-size: 15px;
     text-align: center;
     margin: 0 auto;
+    transition: all 0.3s ease-in-out;
 }
 .filter >p:hover{
     color: var(--brown);
-    transition: all 0.3s ease-in-out;
 }
 #colombia:hover{
     color:rgb(209, 198, 47) ;
@@ -347,10 +347,10 @@ main{
     height: 580px;
     width: 400px;
     flex-wrap: wrap;
+    transition: all 0.75s ease-out;
 }
 .card:hover{
     transform: scale(1.01);
-    transition: all 0.75s ease-out;
 }
 .img-card{
     height: 385px;
@@ -374,6 +374,7 @@ main{
     background: var(--beige);
     color: var(--beige-light);
     font-weight: 500;
+    transition: all 0.3s ease-in-out;
 }
 .btn-add:hover, .btn-clasic:hover{
     /* border: 2px dashed var(--brown); */
@@ -417,6 +418,10 @@ main{
     border: 2px solid var(--beige);
     display: none;
     flex-wrap: wrap;
+    transition: all 0.75s ease-out;
+}
+#container-sing-card:hover{
+transform: scale(1.01);
 }
 /* section end, ubication y contact */
 .section-ubication-contact{
@@ -458,14 +463,16 @@ main{
 }
 .divider-sec{
     border-bottom: 2px solid var(--beige);
+        transition: all 0.3s ease-in-out;
 }
 .divider-sec:hover{
     background-color: var(--beige);
-    transition: all 0.3s ease-in-out;
+}
+.divider-ult{
+        transition: all 0.3s ease-in-out;
 }
 .divider-ult:hover{
     background-color: var(--beige);
-    transition: all 0.3s ease-in-out;
 }
 .form{
     display: flex;
@@ -494,11 +501,11 @@ main{
     font-weight: 500;
     padding: 10px;
     border: 2px dashed var(--beige);
+        transition: all 0.3s ease-in-out;
 }
 .form_field > input:focus{
     background-color: var(--beige);
     color: var(--beige-light);
-    transition: all 0.3s ease-in-out;
 }
 .small{
     width: 75%;
@@ -516,11 +523,11 @@ textarea{
     margin: 0px 10px;
     width: 84%;
     border: 2px dashed var(--beige);
+        transition: all 0.3s ease-in-out;
 }
 textarea:focus{
     background-color: var(--beige);
     color: var(--beige-light);
-    transition: all 0.3s ease-in-out;
 }
 footer{
     width: 100%;

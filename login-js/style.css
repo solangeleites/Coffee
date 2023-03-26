@@ -13,17 +13,14 @@
     --green: rgb(47, 198, 47);
     --beige-dark: #bec0ab;
 }
-body{
-    background: url(./assets/sign-bg.jpg) no-repeat center center/cover;
-    height: 100%;
-}
+
 main{
+    background: url(./assets/sign-bg.jpg) no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 0px 10px;
 }
 .title{
     color: var(--beige-light);
@@ -31,10 +28,6 @@ main{
     font-size: 50px;
     font-weight: 600;
     margin-bottom: 20px;
-    text-align: center;
-}
-.back{
-    color: var(--beige-light);
 }
 .ask{
     color: var(--beige-light);
@@ -42,8 +35,9 @@ main{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
-    text-align: center;
-
+}
+.back{
+    color: var(--beige-light);
 }
 .login:hover{
     color: var(--beige-light);
@@ -61,8 +55,8 @@ form{
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #323025;
+    height: 200px;
     width: 400px;
-    gap: 15px;
 }
 label{
     color: var(--beige-light);
@@ -114,19 +108,4 @@ button{
 button:hover{
     background: var(--brown);
     transition: all 0.3s ease-in-out;
-}
-
-/* Para javascript */
-
-.form.success input{
-    border-bottom: 2px solid #28a745
-}
-.form.error input {
-    border-bottom: 2px solid var(--red);
-}
-.small{
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--red);
-    padding: 4px 0px;
 }
